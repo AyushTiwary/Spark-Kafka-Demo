@@ -18,6 +18,7 @@ object MyConsumer extends App {
     .format("kafka")
     .option("kafka.bootstrap.servers", "localhost:9092")
     .option("subscribe", "mytopic")
+      .option("startoffset" ,"earliest")
     .load()
 
   df.writeStream.outputMode("append")
